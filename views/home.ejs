@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        /* Center content */
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        /* Header Styling */
+        h1 {
+            color: #4CAF50;
+        }
+
+        /* Paragraph Styling */
+        p {
+            font-size: 1.2rem;
+            margin: 20px 0;
+        }
+
+        /* Link and Button Styling */
+        a, button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1rem;
+            color: #fff;
+            background-color: #4CAF50;
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover, button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Our App</h1>
+        <% if (user) { %>
+            <p>Welcome back, <%= user.username %>!</p>
+            <form action="/logout" method="POST">
+                <button type="submit">Logout</button>
+            </form>
+        <% } else { %>
+            <p>If you already have an account, please log in. Otherwise, register yourself first to continue.</p>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        <% } %>
+    </div>
+</body>
+</html>
